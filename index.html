@@ -733,24 +733,19 @@
   document.getElementById('lead-form').addEventListener('submit', async function (e) {
     e.preventDefault();
     const submitBtn = this.querySelector('.submit');
-    const data = Object.fromEntries(new FormData(this).entries());
 
-    // Dados extras para a automação
-    data.origem = 'landing-doctorid-chatgpt-ads';
-    data.pagina = window.location.href;
-    data.data_envio = new Date().toISOString();
+    // Envio como formulário comum (sem preflight/CORS), que o n8n lê direto nos campos
+    const body = new URLSearchParams(new FormData(this));
+    body.append('origem', 'landing-doctorid-chatgpt-ads');
+    body.append('pagina', window.location.href);
+    body.append('data_envio', new Date().toISOString());
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
 
     try {
-      const resp = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      if (!resp.ok) throw new Error('Status ' + resp.status);
-
+      // mode 'no-cors': o dado é enviado ao n8n mesmo sem a resposta ser lida pelo navegador
+      await fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: body });
       window.location.href = THANKS_URL;
     } catch (err) {
       console.error('Erro ao enviar lead:', err);
