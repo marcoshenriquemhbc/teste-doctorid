@@ -27,7 +27,7 @@
   }
   a { color: var(--teal); }
   h1, h2, h3 { font-family: "Montserrat", system-ui, sans-serif; line-height: 1.3; }
-  p { margin: 0 0 22px; }
+  p { margin: 0 0 26px; }
 
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
 
@@ -54,38 +54,44 @@
   .hero h1 { color: #fff; font-size: 42px; font-weight: 700; margin: 14px 0 22px; }
   .lead { color: rgba(255, 255, 255, 0.94); font-size: 21px; line-height: 1.6; max-width: 800px; margin: 0; }
 
+  /* ---------- Botões ---------- */
   .btn {
-    display: inline-block; cursor: pointer; border: 0; text-align: center;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    cursor: pointer; border: 0; text-align: center; max-width: 100%;
     background: var(--green); color: #fff; font-family: "Montserrat", sans-serif;
     font-weight: 700; font-size: 16px; text-decoration: none; line-height: 1.3;
     border-radius: 30px; padding: 16px 30px; margin-top: 26px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); transition: transform .15s ease;
   }
   .btn:hover { transform: translateY(-2px); }
+  .btn .arrow { font-size: 18px; line-height: 1; }
+  .btn-light { background: #fff; color: var(--green); box-shadow: none; }
 
   /* ---------- Artigo ---------- */
   .article {
     margin: -70px auto 0; background: var(--card); border-radius: 4px;
     box-shadow: 15px 15px var(--shadow); padding: 56px 60px; position: relative;
   }
+  .article p { margin: 0 0 30px; line-height: 1.85; }
   .article h2 {
     color: var(--teal); font-size: 28px; font-weight: 700;
-    margin: 56px 0 24px; padding-left: 2px;
+    margin: 60px 0 26px; padding-left: 2px;
   }
   .article > h2:first-child { margin-top: 0; }
 
+  .video-block { margin: 0 0 50px; }
   .video {
-    position: relative; width: 100%; padding-top: 56.25%; margin: 36px 0 12px;
+    position: relative; width: 100%; padding-top: 56.25%; margin: 0 0 16px;
     border-radius: 6px; overflow: hidden; box-shadow: 10px 10px var(--shadow); background: #000;
   }
   .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .caption { text-align: center; font-size: 15px; color: #7a7a7a; margin: 0 0 16px; }
+  .caption { text-align: center; font-size: 15px; color: #7a7a7a; margin: 0; }
 
   .highlight {
     background: var(--green-soft); border-left: 6px solid var(--green-line);
-    border-radius: 4px; padding: 28px 30px; margin: 36px 0;
+    border-radius: 4px; padding: 30px 32px; margin: 40px 0;
   }
-  .highlight p { margin: 0; }
+  .highlight p { margin: 0; line-height: 1.85; }
 
   /* ---------- Seções da landing ---------- */
   .section { padding: 80px 0 0; }
@@ -99,18 +105,16 @@
   .cta-line { text-align: center; margin: 40px 0 0; }
   .cta-line .btn { margin-top: 0; }
 
-  .stats {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 40px 0 0;
-  }
+  .stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 40px 0 0; }
   .stat {
     background: #fff; border-radius: 6px; padding: 28px 22px; text-align: center;
     box-shadow: 8px 8px var(--shadow); border-top: 4px solid var(--green-line);
   }
   .stat .num {
     display: block; font-family: "Montserrat", sans-serif; font-weight: 700;
-    color: var(--teal); font-size: 30px; line-height: 1.2;
+    color: var(--teal); font-size: 30px; line-height: 1.2; margin-bottom: 10px;
   }
-  .stat .label { font-size: 16px; color: #555; }
+  .stat .label { font-size: 16px; color: #555; line-height: 1.6; }
   .stat.featured {
     background: var(--dark); color: #fff; border-top-color: var(--green);
     transform: scale(1.04);
@@ -120,11 +124,11 @@
 
   .pillars { display: grid; gap: 22px; margin-top: 30px; text-align: left; }
   .pillar {
-    background: #fff; border-radius: 6px; padding: 26px 26px;
+    background: #fff; border-radius: 6px; padding: 28px 28px;
     box-shadow: 8px 8px var(--shadow); border-left: 5px solid var(--green-line);
   }
-  .pillar h3 { color: var(--teal); font-size: 19px; margin: 0 0 6px; }
-  .pillar p { margin: 0; font-size: 17px; line-height: 1.7; }
+  .pillar h3 { color: var(--teal); font-size: 19px; margin: 0 0 12px; }
+  .pillar p { margin: 0; font-size: 17px; line-height: 1.8; }
 
   .benefits { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; margin-top: 40px; }
   .benefit {
@@ -136,29 +140,29 @@
     background: var(--green); color: #fff; font-family: "Montserrat", sans-serif;
     font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 16px;
   }
-  .benefit p { margin: 0; font-size: 17px; line-height: 1.6; color: #333; }
+  .benefit p { margin: 0; font-size: 17px; line-height: 1.7; color: #333; }
 
   .positioning {
     background: linear-gradient(120deg, #2b4f5c 0%, #2f8a63 100%);
     color: #fff; border-radius: 10px; padding: 46px 40px; margin-top: 60px; text-align: center;
   }
-  .positioning h2 { color: #fff; font-size: 26px; margin: 0 0 18px; }
-  .positioning p { font-size: 18px; margin: 0; }
+  .positioning h2 { color: #fff; font-size: 26px; margin: 0 0 22px; }
+  .positioning p { font-size: 18px; margin: 0; line-height: 1.8; }
 
   .solutions { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
   .solution-card {
-    background: #fff; border-radius: 6px; padding: 32px 26px;
+    background: #fff; border-radius: 6px; padding: 34px 28px;
     box-shadow: 10px 10px var(--shadow); border-top: 5px solid var(--green);
   }
-  .solution-card h3 { color: var(--teal); font-size: 21px; margin: 0 0 12px; }
-  .solution-card p { font-size: 17px; line-height: 1.65; margin: 0; }
+  .solution-card h3 { color: var(--teal); font-size: 21px; margin: 0 0 16px; }
+  .solution-card p { font-size: 17px; line-height: 1.8; margin: 0; }
 
   .deep { margin-top: 56px; background: #fff; border-radius: 6px; padding: 40px; box-shadow: 12px 12px var(--shadow); }
-  .deep h3 { color: var(--teal); font-size: 24px; margin: 0 0 22px; }
-  .steps { list-style: none; padding: 0; margin: 0 0 26px; }
+  .deep h3 { color: var(--teal); font-size: 24px; margin: 0 0 26px; }
+  .steps { list-style: none; padding: 0; margin: 0 0 30px; }
   .steps li {
-    display: flex; gap: 16px; align-items: flex-start; padding: 14px 0;
-    border-bottom: 1px solid #ecece6; font-size: 17px; line-height: 1.6;
+    display: flex; gap: 16px; align-items: flex-start; padding: 18px 0;
+    border-bottom: 1px solid #ecece6; font-size: 17px; line-height: 1.75;
   }
   .steps li:last-child { border-bottom: 0; }
   .steps .step-n {
@@ -167,32 +171,33 @@
   }
 
   .deep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .deep-grid > div > p { line-height: 1.85; margin: 0 0 26px; }
 
   .security-list { list-style: none; padding: 0; margin: 0; }
   .security-list li {
-    padding: 12px 0 12px 34px; position: relative; font-size: 17px; border-bottom: 1px solid #ecece6;
+    padding: 16px 0 16px 34px; position: relative; font-size: 17px; line-height: 1.7; border-bottom: 1px solid #ecece6;
   }
   .security-list li::before {
-    content: "✓"; position: absolute; left: 0; top: 12px; width: 22px; height: 22px; border-radius: 50%;
+    content: "✓"; position: absolute; left: 0; top: 18px; width: 22px; height: 22px; border-radius: 50%;
     background: var(--green); color: #fff; font-size: 13px; font-weight: 700;
     display: flex; align-items: center; justify-content: center;
   }
   .badge {
     display: inline-block; background: var(--dark); color: #fff; font-family: "Montserrat", sans-serif;
-    font-weight: 700; border-radius: 10px; padding: 14px 22px; margin-top: 24px; font-size: 15px;
+    font-weight: 700; border-radius: 10px; padding: 14px 22px; margin-top: 10px; font-size: 15px; line-height: 1.5;
   }
 
   .areas { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
   .area {
-    background: #fff; border-radius: 6px; padding: 26px 26px; box-shadow: 8px 8px var(--shadow);
+    background: #fff; border-radius: 6px; padding: 28px 28px; box-shadow: 8px 8px var(--shadow);
     border-left: 5px solid var(--teal);
   }
-  .area h3 { color: var(--teal); font-size: 19px; margin: 0 0 8px; }
-  .area p { margin: 0; font-size: 17px; line-height: 1.65; }
+  .area h3 { color: var(--teal); font-size: 19px; margin: 0 0 12px; }
+  .area p { margin: 0; font-size: 17px; line-height: 1.8; }
 
   .faq { margin-top: 40px; display: grid; gap: 16px; }
   details.faq-item {
-    background: #fff; border-radius: 6px; padding: 22px 26px; box-shadow: 8px 8px var(--shadow);
+    background: #fff; border-radius: 6px; padding: 24px 28px; box-shadow: 8px 8px var(--shadow);
   }
   details.faq-item summary {
     cursor: pointer; font-family: "Montserrat", sans-serif; font-weight: 700; color: var(--teal);
@@ -201,7 +206,7 @@
   details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item summary::after { content: "+"; font-size: 22px; color: var(--green); }
   details.faq-item[open] summary::after { content: "−"; }
-  details.faq-item p { margin: 14px 0 0; font-size: 17px; line-height: 1.7; }
+  details.faq-item p { margin: 18px 0 0; font-size: 17px; line-height: 1.8; }
 
   /* ---------- Banner e CTA final ---------- */
   .banner {
@@ -211,13 +216,13 @@
     box-shadow: 12px 12px var(--shadow);
     display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
   }
-  .banner h3 { color: #fff; font-size: 24px; margin: 0 0 8px; }
-  .banner p { margin: 0; font-size: 16px; opacity: .95; max-width: 460px; line-height: 1.6; }
-  .banner .btn { margin-top: 0; background: #fff; color: var(--green); box-shadow: none; }
+  .banner h3 { color: #fff; font-size: 24px; margin: 0 0 12px; }
+  .banner p { margin: 0; font-size: 16px; opacity: .95; max-width: 460px; line-height: 1.7; }
+  .banner .btn { margin-top: 0; }
 
   .closing { margin-top: 60px; padding-top: 40px; border-top: 1px solid #e6e6e0; text-align: center; }
-  .closing h3 { color: var(--teal); font-size: 24px; margin: 0 0 14px; }
-  .closing p { margin: 0 auto 18px; max-width: 680px; }
+  .closing h3 { color: var(--teal); font-size: 24px; margin: 0 0 18px; }
+  .closing p { margin: 0 auto 26px; max-width: 680px; line-height: 1.85; }
 
   footer { text-align: center; color: #7a7a7a; font-size: 14px; padding: 50px 0 120px; }
 
@@ -240,7 +245,7 @@
     background: linear-gradient(160deg, #2b4f5c 0%, #1e3a46 100%); overflow-y: auto;
   }
   .modal-left .brand-text { font-size: 20px; }
-  .modal-left p.pitch { font-size: 18px; line-height: 1.55; margin: 26px 0 28px; }
+  .modal-left p.pitch { font-size: 18px; line-height: 1.6; margin: 26px 0 28px; }
   .checks { list-style: none; padding: 0; margin: 0; }
   .checks li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 16px; }
   .checks li::before {
@@ -258,15 +263,15 @@
   .modal-tag {
     color: var(--green); font-family: "Montserrat", sans-serif; font-weight: 700;
     font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
-    display: flex; align-items: center; gap: 8px; margin: 0 0 6px;
+    display: flex; align-items: center; gap: 8px; margin: 0 0 8px;
   }
   .modal-tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
-  .modal-sub { color: #8a8a8a; font-size: 15px; margin: 0 0 24px; }
+  .modal-sub { color: #8a8a8a; font-size: 15px; margin: 0 0 26px; }
 
-  .field { margin-bottom: 16px; }
+  .field { margin-bottom: 18px; }
   .field label {
     display: block; font-family: "Montserrat", sans-serif; font-weight: 700;
-    font-size: 14px; color: #2b3b40; margin-bottom: 6px;
+    font-size: 14px; color: #2b3b40; margin-bottom: 8px;
   }
   .field label span { font-weight: 400; color: #9a9a9a; font-size: 13px; margin-left: 4px; }
   .input {
@@ -284,6 +289,7 @@
     border-radius: 12px; padding: 17px; box-shadow: 0 10px 22px rgba(47, 138, 99, 0.3);
   }
   .submit:hover { filter: brightness(1.05); }
+  .submit:disabled { opacity: .7; cursor: wait; }
   .thanks { display: none; text-align: center; padding: 30px 0; }
   .thanks.show { display: block; }
 
@@ -319,19 +325,19 @@
     .hero { padding: 24px 0 90px; }
     .hero h1 { font-size: 30px; }
     .lead { font-size: 18px; }
-    .article { margin-top: -40px; padding: 30px 22px; }
-    .article h2 { font-size: 23px; margin-top: 44px; }
-    .section { padding-top: 56px; }
+    .btn { width: 100%; padding: 16px 20px; }
+    .article { margin-top: -40px; padding: 34px 22px; }
+    .article h2 { font-size: 23px; margin-top: 50px; }
+    .section { padding-top: 60px; }
     .section-title { font-size: 25px; }
     .stats { grid-template-columns: 1fr; }
     .stat.featured .num { font-size: 36px; }
     .benefits, .areas { grid-template-columns: 1fr; }
-    .positioning { padding: 32px 22px; }
+    .positioning { padding: 34px 22px; }
     .positioning h2 { font-size: 21px; }
-    .deep { padding: 26px 20px; }
-    .banner { padding: 28px 22px; }
+    .deep { padding: 28px 22px; }
+    .banner { padding: 30px 22px; }
     .banner .btn { width: 100%; }
-    .btn { width: 100%; max-width: 100%; }
     .row { grid-template-columns: 1fr; }
     .modal-right { padding: 26px 20px; }
   }
@@ -348,7 +354,7 @@
     <div class="eyebrow">Gestão de plantão médico</div>
     <h1>Por que sua escala de plantão ainda vive no WhatsApp (e quanto isso está custando ao seu hospital)</h1>
     <p class="lead">Planilha e mensagem não dão conta da rotina do corpo clínico. Veja onde o improviso está custando caro e como organizar escala, presença, documentos e pagamento num fluxo só.</p>
-    <button class="btn" data-open-modal>Solicite a sua demonstração gratuita →</button>
+    <button class="btn" data-open-modal>Solicite a sua demonstração gratuita <span class="arrow">→</span></button>
   </div>
 </header>
 
@@ -357,14 +363,16 @@
   <!-- ===== ARTIGO: PROBLEMA ===== -->
   <article class="article">
 
+    <div class="video-block">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/idMMwEcK5S0" title="Vídeo de apresentação do DoctorID" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="caption">Assista esse vídeo para saber mais sobre a plataforma.</p>
+    </div>
+
     <p>Quem administra escala médica conhece a rotina. Um plantonista avisa na véspera que não vai conseguir cumprir o turno. Alguém precisa encontrar substituto no meio de dezenas de mensagens. Outro médico aparece escalado em dois lugares ao mesmo tempo. No fim do mês, o fechamento de horas vira uma caça a planilhas, grupos de WhatsApp e assinaturas pendentes. O problema não é a equipe. É um processo que cresceu sem uma ferramenta feita para ele.</p>
 
     <p>Este texto é para quem mantém a escala funcionando: diretores clínicos, gestores de escalas, coordenadores de recursos humanos e responsáveis pelo corpo clínico em hospitais e clínicas. Se você reconhece parte dessa rotina, vale continuar lendo.</p>
-
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/idMMwEcK5S0" title="Vídeo de apresentação do DoctorID" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <p class="caption">Veja a plataforma funcionando na rotina de uma operação real.</p>
 
     <h2>Quando a escala depende de planilha e mensagem, o caos vira rotina</h2>
 
@@ -411,7 +419,7 @@
     </div>
 
     <div class="cta-line">
-      <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
+      <button class="btn" data-open-modal>Quero agendar uma demonstração gratuita <span class="arrow">→</span></button>
     </div>
   </section>
 
@@ -468,7 +476,7 @@
     </div>
 
     <div class="cta-line">
-      <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
+      <button class="btn" data-open-modal>Quero agendar uma demonstração gratuita <span class="arrow">→</span></button>
     </div>
   </section>
 
@@ -502,7 +510,7 @@
         <li><span class="step-n">03</span><span>Identifique profissionais em conflito de horário em suas agendas e preveja possíveis atrasos antes que eles aconteçam.</span></li>
       </ol>
       <div class="cta-line" style="margin-top: 0;">
-        <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
+        <button class="btn" data-open-modal>Quero agendar uma demonstração gratuita <span class="arrow">→</span></button>
       </div>
     </div>
 
@@ -515,7 +523,7 @@
         <li><span class="step-n">04</span><span>Reduza falhas operacionais e melhore a produtividade da equipe assistencial.</span></li>
       </ol>
       <div class="cta-line" style="margin-top: 0;">
-        <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
+        <button class="btn" data-open-modal>Quero agendar uma demonstração gratuita <span class="arrow">→</span></button>
       </div>
     </div>
   </section>
@@ -524,7 +532,7 @@
   <section class="section">
     <div class="deep-grid">
       <div>
-        <h2 class="section-title" style="text-align:left; margin-bottom: 18px;">Segurança de dados em nível hospitalar</h2>
+        <h2 class="section-title" style="text-align:left; margin-bottom: 22px;">Segurança de dados em nível hospitalar</h2>
         <p>Sua operação lida com dados sensíveis de profissionais e pacientes. Por isso, a segurança faz parte da plataforma desde o início, e não é um complemento.</p>
         <span class="badge">Nota A em segurança na avaliação Qualys SSL Labs</span>
       </div>
@@ -562,7 +570,7 @@
     </div>
 
     <div class="cta-line">
-      <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
+      <button class="btn" data-open-modal>Quero agendar uma demonstração gratuita <span class="arrow">→</span></button>
     </div>
   </section>
 
@@ -596,14 +604,14 @@
       <h3>Veja a sua escala funcionando nesse modelo</h3>
       <p>Uma demonstração guiada, sem compromisso, mostrando o sistema na rotina de uma instituição como a sua.</p>
     </div>
-    <button class="btn" data-open-modal>Agendar demonstração →</button>
+    <button class="btn btn-light" data-open-modal>Agendar demonstração <span class="arrow">→</span></button>
   </div>
 
   <div class="closing">
     <h3>Uma demonstração gratuita para ver isso na sua rotina</h3>
     <p>Se a sua equipe ainda monta escala no WhatsApp e fecha o mês em planilha, vale conhecer a alternativa antes que o próximo plantão descoberto ou o próximo erro de pagamento apareça.</p>
     <p>Na demonstração, você conhece as funcionalidades, tira dúvidas e recebe uma proposta personalizada para o tamanho da sua operação. Não é preciso mudar tudo de uma vez: a implantação acompanha o ritmo da equipe.</p>
-    <button class="btn" data-open-modal>Solicite a sua demonstração gratuita →</button>
+    <button class="btn" data-open-modal>Solicite a sua demonstração gratuita <span class="arrow">→</span></button>
   </div>
 
 </main>
@@ -617,7 +625,7 @@
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.12c-.25.7-1.44 1.34-1.98 1.42-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.22-5.01-4.42-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.43-.07.67.51.25.6.84 2.06.92 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.45.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.34 1.45.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.71.81 2 .96.3.15.49.22.56.35.07.12.07.72-.18 1.42z"/></svg>
 </a>
 
-<!-- ===== Pop-up de agendamento ===== -->
+<!-- ===== Pop-up de agendamento (único, usado por todos os botões) ===== -->
 <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal">
     <div class="modal-left">
@@ -671,6 +679,11 @@
 </div>
 
 <script>
+  // Webhook do n8n (produção)
+  const WEBHOOK_URL = 'https://n8n.iaatende.click/webhook/chat-gpt-ads-doctorid';
+  // Página de obrigado
+  const THANKS_URL = 'https://mkt.doctorid.com.br/chagpt-obrigado';
+
   const modal = document.getElementById('modal');
   const openers = document.querySelectorAll('[data-open-modal]');
   const closers = document.querySelectorAll('[data-close-modal]');
@@ -683,13 +696,34 @@
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  // Substitua pelo envio real (webhook do n8n, Brevo ou CRM).
-  document.getElementById('lead-form').addEventListener('submit', function (e) {
+  document.getElementById('lead-form').addEventListener('submit', async function (e) {
     e.preventDefault();
+    const submitBtn = this.querySelector('.submit');
     const data = Object.fromEntries(new FormData(this).entries());
-    console.log('Lead:', data);
-    document.getElementById('form-wrap').style.display = 'none';
-    document.getElementById('thanks').classList.add('show');
+
+    // Dados extras para a automação
+    data.origem = 'landing-doctorid-chatgpt-ads';
+    data.pagina = window.location.href;
+    data.data_envio = new Date().toISOString();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    try {
+      const resp = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!resp.ok) throw new Error('Status ' + resp.status);
+
+      window.location.href = THANKS_URL;
+    } catch (err) {
+      console.error('Erro ao enviar lead:', err);
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar →';
+      alert('Não foi possível enviar agora. Tente novamente em instantes.');
+    }
   });
 </script>
 
