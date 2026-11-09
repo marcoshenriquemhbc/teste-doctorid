@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Por que sua escala de plantão ainda vive no WhatsApp | DoctorID</title>
 <meta name="description" content="Planilha e mensagem não dão conta da gestão de plantões. Veja o custo de continuar improvisando e como um fluxo único organiza escala, presença, documentos e pagamento.">
-<link rel="icon" href="/img/favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
 <style>
   :root {
     --bg: #eff0eb;
     --text: #404040;
     --teal: #528084;
-    --navy: #4b5a94;
     --green: #2f8a63;
     --green-soft: rgba(195, 239, 212, 0.45);
     --green-line: rgba(112, 185, 140, 0.8);
@@ -27,7 +25,6 @@
     margin: 0; background: var(--bg); color: var(--text);
     font-family: "Varela Round", system-ui, sans-serif; font-size: 18px; line-height: 1.8;
   }
-  img { max-width: 100%; height: auto; display: block; }
   a { color: var(--teal); }
   h1, h2, h3 { font-family: "Montserrat", system-ui, sans-serif; line-height: 1.3; }
   p { margin: 0 0 22px; }
@@ -36,20 +33,16 @@
 
   /* ---------- Cabeçalho ---------- */
   .hero {
-    background:
-      linear-gradient(135deg, rgba(82, 128, 132, 0.96) 0%, rgba(75, 90, 148, 0.88) 100%),
-      url("/img/bg5.webp") center / cover;
+    background: linear-gradient(135deg, rgba(82, 128, 132, 0.96) 0%, rgba(75, 90, 148, 0.88) 100%);
     color: #fff; padding: 34px 0 110px;
   }
   .nav {
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 14px; margin-bottom: 56px;
   }
-  .logo-link {
-    background: rgba(255, 255, 255, 0.96); border-radius: 8px;
-    box-shadow: 8px 8px var(--shadow); display: inline-flex; padding: 9px 18px;
+  .brand-text {
+    font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 22px; color: #fff; letter-spacing: .02em;
   }
-  .logo-link img { max-width: 160px; }
   .nav a.pill {
     color: #fff; text-decoration: none; font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.55); border-radius: 24px; padding: 9px 18px;
@@ -94,13 +87,6 @@
   }
   .highlight p { margin: 0; }
 
-  .figure { margin: 40px 0; }
-  .figure img {
-    width: 100%; max-height: 520px; object-fit: contain; border-radius: 6px;
-    box-shadow: 10px 10px var(--shadow); background: #fff;
-  }
-  .figure figcaption { text-align: center; font-size: 15px; color: #7a7a7a; margin-top: 14px; }
-
   /* ---------- Seções da landing ---------- */
   .section { padding: 80px 0 0; }
   .section-title {
@@ -132,11 +118,11 @@
   .stat.featured .num { color: #c3efd4; font-size: 40px; }
   .stat.featured .label { color: #fff; }
 
-  .credib {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 30px;
+  .pillars { display: grid; gap: 22px; margin-top: 30px; text-align: left; }
+  .pillar {
+    background: #fff; border-radius: 6px; padding: 26px 26px;
+    box-shadow: 8px 8px var(--shadow); border-left: 5px solid var(--green-line);
   }
-  .credib img { border-radius: 6px; box-shadow: 10px 10px var(--shadow); }
-  .pillars { display: grid; gap: 22px; }
   .pillar h3 { color: var(--teal); font-size: 19px; margin: 0 0 6px; }
   .pillar p { margin: 0; font-size: 17px; line-height: 1.7; }
 
@@ -153,7 +139,7 @@
   .benefit p { margin: 0; font-size: 17px; line-height: 1.6; color: #333; }
 
   .positioning {
-    background: linear-gradient(120deg, rgba(43, 79, 92, 0.94) 0%, rgba(47, 138, 99, 0.88) 100%), url("/img/bg5.webp") center / cover;
+    background: linear-gradient(120deg, #2b4f5c 0%, #2f8a63 100%);
     color: #fff; border-radius: 10px; padding: 46px 40px; margin-top: 60px; text-align: center;
   }
   .positioning h2 { color: #fff; font-size: 26px; margin: 0 0 18px; }
@@ -172,20 +158,19 @@
   .steps { list-style: none; padding: 0; margin: 0 0 26px; }
   .steps li {
     display: flex; gap: 16px; align-items: flex-start; padding: 14px 0;
-    border-bottom: 1px solid #ececE6; font-size: 17px; line-height: 1.6;
+    border-bottom: 1px solid #ecece6; font-size: 17px; line-height: 1.6;
   }
   .steps li:last-child { border-bottom: 0; }
   .steps .step-n {
     flex-shrink: 0; font-family: "Montserrat", sans-serif; font-weight: 700;
     color: var(--green); font-size: 16px; min-width: 32px;
   }
-  .deep .extra { font-size: 17px; margin: 0 0 22px; color: #444; }
 
   .deep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 
   .security-list { list-style: none; padding: 0; margin: 0; }
   .security-list li {
-    padding: 12px 0 12px 34px; position: relative; font-size: 17px; border-bottom: 1px solid #ececE6;
+    padding: 12px 0 12px 34px; position: relative; font-size: 17px; border-bottom: 1px solid #ecece6;
   }
   .security-list li::before {
     content: "✓"; position: absolute; left: 0; top: 12px; width: 22px; height: 22px; border-radius: 50%;
@@ -205,13 +190,6 @@
   .area h3 { color: var(--teal); font-size: 19px; margin: 0 0 8px; }
   .area p { margin: 0; font-size: 17px; line-height: 1.65; }
 
-  .awards-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
-  .award-slot {
-    background: #fff; border-radius: 6px; padding: 16px; box-shadow: 8px 8px var(--shadow);
-    text-align: center; min-height: 180px; display: flex; align-items: center; justify-content: center;
-  }
-  .award-slot img { width: 100%; height: auto; object-fit: contain; }
-
   .faq { margin-top: 40px; display: grid; gap: 16px; }
   details.faq-item {
     background: #fff; border-radius: 6px; padding: 22px 26px; box-shadow: 8px 8px var(--shadow);
@@ -220,6 +198,7 @@
     cursor: pointer; font-family: "Montserrat", sans-serif; font-weight: 700; color: var(--teal);
     font-size: 17px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px;
   }
+  details.faq-item summary::-webkit-details-marker { display: none; }
   details.faq-item summary::after { content: "+"; font-size: 22px; color: var(--green); }
   details.faq-item[open] summary::after { content: "−"; }
   details.faq-item p { margin: 14px 0 0; font-size: 17px; line-height: 1.7; }
@@ -227,9 +206,7 @@
   /* ---------- Banner e CTA final ---------- */
   .banner {
     position: relative; overflow: hidden; border-radius: 10px;
-    background:
-      linear-gradient(120deg, rgba(43, 79, 92, 0.94) 0%, rgba(47, 138, 99, 0.88) 100%),
-      url("/img/bg5.webp") center / cover;
+    background: linear-gradient(120deg, #2b4f5c 0%, #2f8a63 100%);
     color: #fff; padding: 40px; margin: 60px 0 0;
     box-shadow: 12px 12px var(--shadow);
     display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
@@ -260,12 +237,9 @@
 
   .modal-left {
     color: #fff; padding: 40px 34px; display: flex; flex-direction: column; justify-content: space-between;
-    background:
-      linear-gradient(160deg, rgba(43, 79, 92, 0.92) 0%, rgba(30, 58, 70, 0.96) 100%),
-      url("/img/bg5.webp") center / cover;
-    overflow-y: auto;
+    background: linear-gradient(160deg, #2b4f5c 0%, #1e3a46 100%); overflow-y: auto;
   }
-  .modal-left .brand { height: 34px; width: auto; filter: brightness(0) invert(1); }
+  .modal-left .brand-text { font-size: 20px; }
   .modal-left p.pitch { font-size: 18px; line-height: 1.55; margin: 26px 0 28px; }
   .checks { list-style: none; padding: 0; margin: 0; }
   .checks li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 16px; }
@@ -324,9 +298,9 @@
 
   /* ---------- Responsivo ---------- */
   @media (max-width: 960px) {
-    .credib, .deep-grid { grid-template-columns: 1fr; }
-    .solutions, .awards-slots { grid-template-columns: 1fr; }
+    .solutions { grid-template-columns: 1fr; }
     .stat.featured { transform: none; }
+    .deep-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 860px) {
     .modal-backdrop { align-items: flex-end; padding: 0; }
@@ -337,7 +311,6 @@
     /* No mobile, o formulário vem primeiro e o painel azul vira só um cabeçalho curto */
     .modal-right { order: -1; padding: 28px 22px 26px; }
     .modal-left { padding: 22px 22px 18px; }
-    .modal-left .brand { height: 26px; }
     .modal-left p.pitch { font-size: 15px; margin: 12px 0 0; }
     .checks { display: none; }
   }
@@ -369,7 +342,7 @@
 <header class="hero">
   <div class="wrap">
     <nav class="nav">
-      <a class="logo-link" href="#"><img src="/img/logo-210-64.webp" alt="DoctorID"></a>
+      <span class="brand-text">DoctorID</span>
       <a class="pill" href="https://blog.doctorid.com.br/" target="_blank" rel="noopener">Blog</a>
     </nav>
     <div class="eyebrow">Gestão de plantão médico</div>
@@ -417,11 +390,6 @@
 
     <p>Para a diretoria, o efeito é de falta de visibilidade. Sem dados consolidados, é difícil saber quais equipes têm mais faltas, onde estão os gargalos de cobertura ou quanto realmente se gasta com plantões. E documentação desatualizada deixa a instituição vulnerável em auditorias e fiscalizações, algo que costuma ser mais caro de corrigir depois do que de estruturar desde o início.</p>
 
-    <figure class="figure">
-      <img src="/img/doctorid_quadrado.webp" alt="Calendário de escalas médicas no DoctorID" loading="lazy">
-      <figcaption>Escala médica organizada em um só lugar.</figcaption>
-    </figure>
-
     <h2>Um fluxo único, do primeiro cadastro ao pagamento</h2>
 
     <p>A DoctorID foi criada para cuidar da jornada completa do corpo clínico, da entrada do profissional até a manutenção do vínculo. A proposta é trocar as ferramentas improvisadas por um fluxo em que escala, presença, documentação e pagamento conversam entre si. Na prática, a plataforma permite acompanhar cada etapa sem depender de planilhas soltas nem de mensagens perdidas.</p>
@@ -452,21 +420,18 @@
     <h2 class="section-title">Tecnologia criada por quem conhece a rotina hospitalar e entrega suporte de verdade</h2>
     <p class="section-sub">Acreditamos que gestão e tecnologia melhoram vidas.</p>
 
-    <div class="credib">
-      <img src="https://mkt.doctorid.com.br/_cdn/mkt.doctorid.com.br-chatgptads/1792457058/imagens/3.webp" alt="Equipe DoctorID" loading="lazy">
-      <div class="pillars">
-        <div class="pillar">
-          <h3>Criado por gestores com experiência no setor</h3>
-          <p>Nasceu da vivência real na gestão de plantões e escalas. Atualizações a cada 15 dias com base em feedbacks dos usuários.</p>
-        </div>
-        <div class="pillar">
-          <h3>Implantação com suporte ativo</h3>
-          <p>Implantação assistida com atendimento personalizado, treinamentos e acompanhamento semanal durante a adaptação da equipe.</p>
-        </div>
-        <div class="pillar">
-          <h3>Equipe de TI especializada</h3>
-          <p>Mais de 30 anos de experiência em desenvolvimento. Equipe 100% dedicada a integrar soluções para o setor da saúde.</p>
-        </div>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Criado por gestores com experiência no setor</h3>
+        <p>Nasceu da vivência real na gestão de plantões e escalas. Atualizações a cada 15 dias com base em feedbacks dos usuários.</p>
+      </div>
+      <div class="pillar">
+        <h3>Implantação com suporte ativo</h3>
+        <p>Implantação assistida com atendimento personalizado, treinamentos e acompanhamento semanal durante a adaptação da equipe.</p>
+      </div>
+      <div class="pillar">
+        <h3>Equipe de TI especializada</h3>
+        <p>Mais de 30 anos de experiência em desenvolvimento. Equipe 100% dedicada a integrar soluções para o setor da saúde.</p>
       </div>
     </div>
   </section>
@@ -536,7 +501,6 @@
         <li><span class="step-n">02</span><span>Saiba com rapidez quem está de plantão neste momento em cada equipe.</span></li>
         <li><span class="step-n">03</span><span>Identifique profissionais em conflito de horário em suas agendas e preveja possíveis atrasos antes que eles aconteçam.</span></li>
       </ol>
-
       <div class="cta-line" style="margin-top: 0;">
         <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
       </div>
@@ -550,7 +514,6 @@
         <li><span class="step-n">03</span><span>Monitore diferentes unidades e equipes com uma única plataforma.</span></li>
         <li><span class="step-n">04</span><span>Reduza falhas operacionais e melhore a produtividade da equipe assistencial.</span></li>
       </ol>
-
       <div class="cta-line" style="margin-top: 0;">
         <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
       </div>
@@ -603,24 +566,7 @@
     </div>
   </section>
 
-  <!-- Bloco 9: Prêmios (imagens a serem enviadas) -->
-  <section class="section">
-    <h2 class="section-title">Nossos prêmios</h2>
-    <p class="section-sub">Reconhecimentos que refletem o trabalho feito junto às equipes de saúde.</p>
-
-    <div class="awards-slots">
-      <!-- Troque o src pelos arquivos reais enviados para /img/premios/ -->
-      <div class="award-slot"><img src="/img/premios/premio-1.webp" alt="Prêmio DoctorID 1" loading="lazy"></div>
-      <div class="award-slot"><img src="/img/premios/premio-2.webp" alt="Prêmio DoctorID 2" loading="lazy"></div>
-      <div class="award-slot"><img src="/img/premios/premio-3.webp" alt="Prêmio DoctorID 3" loading="lazy"></div>
-    </div>
-
-    <div class="cta-line">
-      <a class="btn" href="https://api.whatsapp.com/send/?phone=5519978261204&text=Oi%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20DoctorID" target="_blank" rel="noopener">Quero agendar uma demonstração gratuita</a>
-    </div>
-  </section>
-
-  <!-- Bloco 10: FAQ -->
+  <!-- Bloco 9: FAQ -->
   <section class="section">
     <h2 class="section-title">Dúvidas frequentes</h2>
 
@@ -644,7 +590,7 @@
     </div>
   </section>
 
-  <!-- Bloco 11: CTA final -->
+  <!-- Bloco 10: CTA final -->
   <div class="banner">
     <div>
       <h3>Veja a sua escala funcionando nesse modelo</h3>
@@ -675,7 +621,7 @@
 <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal">
     <div class="modal-left">
-      <img class="brand" src="/img/logo-210-64.webp" alt="DoctorID">
+      <span class="brand-text">DoctorID</span>
       <div>
         <p class="pitch">Preencha seus dados e nossa equipe entrará em contato para apresentar o DoctorID e mostrar como a plataforma pode transformar a gestão da sua equipe.</p>
         <ul class="checks">
