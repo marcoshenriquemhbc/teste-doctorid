@@ -280,6 +280,12 @@
     border: 1.5px solid #e4e7e5; border-radius: 12px; padding: 14px; outline: none;
     transition: border-color .15s, background .15s; -webkit-appearance: none; appearance: none;
   }
+  select.input {
+    background-image: linear-gradient(45deg, transparent 50%, #2b3b40 50%),
+      linear-gradient(135deg, #2b3b40 50%, transparent 50%);
+    background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+    background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 36px;
+  }
   .input::placeholder { color: #b5b5b5; }
   .input:focus { border-color: var(--green); background: #fff; }
   textarea.input { min-height: 90px; resize: vertical; }
@@ -692,9 +698,19 @@
               <input class="input" id="email" name="email" type="email" placeholder="seuemail@empresa.com" autocomplete="email" inputmode="email" required>
             </div>
             <div class="field">
-              <label for="telefone">Telefone</label>
-              <input class="input" id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel" required>
+              <label for="celular">Celular</label>
+              <input class="input" id="celular" name="celular" type="tel" placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel" required>
             </div>
+          </div>
+          <div class="field">
+            <label for="natureza">Natureza da instituição</label>
+            <select class="input" id="natureza" name="natureza" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="Hospital">Hospital</option>
+              <option value="Clínica">Clínica</option>
+              <option value="Operadora ou cooperativa">Operadora ou cooperativa</option>
+              <option value="Outro">Outro</option>
+            </select>
           </div>
           <div class="field">
             <label for="mensagem">Mensagem <span>opcional</span></label>
@@ -714,9 +730,11 @@
 
 <script>
   // Webhook do n8n (produção)
-  const WEBHOOK_URL = 'https://n8n.iaatende.click/webhook/chat-gpt-ads-doctorid';
+  const WEBHOOK_URL = 'https://n8n.doctorid.com.br/webhook/bf87b1ac-5dbc-4afe-a2cd-41f3b32f9227';
   // Página de obrigado
   const THANKS_URL = 'https://mkt.doctorid.com.br/chagpt-obrigado';
+  // Origem fixa desta landing
+  const ORIGEM = 'landing-doctorid-chatgpt-ads';
 
   const modal = document.getElementById('modal');
   const openers = document.querySelectorAll('[data-open-modal]');
@@ -733,18 +751,26 @@
   document.getElementById('lead-form').addEventListener('submit', async function (e) {
     e.preventDefault();
     const submitBtn = this.querySelector('.submit');
+    const form = new FormData(this);
 
-    // Envio como formulário comum (sem preflight/CORS), que o n8n lê direto nos campos
-    const body = new URLSearchParams(new FormData(this));
-    body.append('origem', 'landing-doctorid-chatgpt-ads');
-    body.append('pagina', window.location.href);
-    body.append('data_envio', new Date().toISOString());
+    // Payload exatamente no formato pedido: nome, email, celular, mensagem, natureza, origem
+    const payload = {
+      nome: form.get('nome') || '',
+      email: form.get('email') || '',
+      celular: form.get('celular') || '',
+      mensagem: form.get('mensagem') || '',
+      natureza: form.get('natureza') || '',
+      origem: ORIGEM
+    };
+
+    // Enviado como dados de formulário (sem preflight/CORS); o n8n lê cada chave como campo
+    const body = new URLSearchParams(payload);
 
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando...';
 
     try {
-      // mode 'no-cors': o dado é enviado ao n8n mesmo sem a resposta ser lida pelo navegador
+      // mode 'no-cors': o dado chega ao n8n mesmo sem o navegador ler a resposta
       await fetch(WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: body });
       window.location.href = THANKS_URL;
     } catch (err) {
